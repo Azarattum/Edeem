@@ -9,21 +9,16 @@ app.controller("ItemCtrl", ["$scope", "$stateParams", "Menu", function($scope, $
 		$scope.dinner = res.data.find(x => x.id == id);
 		
 		setTimeout(() => {
-			let height = Math.max(document.body.scrollHeight, document.body.offsetHeight, 
-			document.documentElement.clientHeight, document.documentElement.scrollHeight,
-			document.documentElement.offsetHeight) - window.innerHeight;
-			let scrollStep = Math.ceil((height-window.scrollY) / (200 / 15));
-			let	scrollInterval = setInterval(() => {
-				if (window.scrollY < height) {
-					window.scrollBy(0, scrollStep);
-					console.log(window.scrollY);
-				}
-				else clearInterval(scrollInterval); 
-			},15);
-		}, 100);
+			window.scrollBy(0, Number.MAX_SAFE_INTEGER);
+		}, 2);
 	}).catch((res) => {
 		console.log(res);
 	});
 	
 	$scope.scrollToTop();
+	document.body.onload = () => {
+		setTimeout(() => {
+		window.scrollBy(0, Number.MAX_SAFE_INTEGER);
+		}, 2);
+	};
 }])

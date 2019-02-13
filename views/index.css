@@ -15,6 +15,13 @@
   src: url("../assets/fonts/opensans.light.ttf");
 }
 
+@media only screen and (min-width: 0px) and (max-width: 420px) {
+	.wrapper {
+        max-width: 98vw !important;
+        padding: 0px !important;
+	}
+}
+
 body {
 	margin: 0px;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -41,6 +48,7 @@ body {
 .logo.minimized {
 	top: 0px;
 	width: 350px;
+	max-width: 80vw;
 	height: 0;
 	
 	font-size: 8vmin;
@@ -84,7 +92,7 @@ body {
 	top: 0px;
 	
 	width: 120vw;
-	height: 110vh;
+	height: 130vh;
 	
 	background-image: url("../assets/images/background.jpg");
 	background-size: cover;
@@ -98,7 +106,7 @@ body {
 	top: 16%;
 	width: 120vw;
 	min-width: 420px;
-	height: 110vh;
+	height: 130vh;
 	
 	clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 40%);
 	background-image: url("../assets/images/background.blured.jpg");
@@ -114,7 +122,7 @@ body {
 	left: -10vw;
 	top: 16%;
 	width: 130vw;
-	height: 100vh;
+	height: 130vh;
 	
 	filter: blur(8px);
 
@@ -128,7 +136,7 @@ body {
 	left: -10vw;
 	top: 0%;
 	width: 130vw;
-	height: 100vh;
+	height: 130vh;
 	
 	clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 40%);
 	background-color: black;
