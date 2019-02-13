@@ -1,4 +1,4 @@
-app.controller("IndexCtrl", ["$scope", "$location", ($scope, $location) => {
+app.controller("IndexCtrl", ["$scope", "$location", "Cart", ($scope, $location, Cart) => {
 	//Setup scrolling
 	window.addEventListener("scroll", (e) => {
 		let logo = document.getElementsByClassName("logo")[0];
@@ -40,4 +40,36 @@ app.controller("IndexCtrl", ["$scope", "$location", ($scope, $location) => {
 		if (cancel) return;
 		$location.path(page, false);
 	};
+
+	$scope.getCartItems = () => {
+		let count = 0;
+		Cart.get().map(x => count += x.count);
+		return count;
+	};
+
+	$scope.getCartPrice = () => {
+		let price = 0;
+		Cart.get().map(x => price += x.count * x.price);
+		return price;
+	};
 }]);
+
+app.filter("DishCount", function() {
+	return function(input) {
+		let output = input + " БЛЮД";
+
+		let lastDigit = +input.toString()[input.toString().length - 1];
+		if (+input.toString().slice(-2) > 10 && +input.toString().slice(-2) < 20)
+			return output;
+
+		switch(lastDigit)
+		{
+			case 1: output+="О"; break;
+			case 2: output+="А"; break;
+			case 3: output+="А"; break;
+			case 4: output+="А"; break;
+		}
+
+		return output;
+	}
+});

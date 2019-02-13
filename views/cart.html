@@ -1,1 +1,8 @@
+<link rel="stylesheet" type="text/css" href="views/cart.css">
+
+<div class="button back" ng-click="goTo('menu')">В МЕНЮ</div>
 <div>Your cart.</div>
+<br>
+<div ng-repeat="item in cart">
+    {{item.title}} x{{item.count}}<br>
+</div>

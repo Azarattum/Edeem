@@ -3,7 +3,7 @@
 <div class="items">
 	<div class="item-wrapper" ng-repeat="dinner in dinners"
 		ng-class="{notavailable:(+dinner['is_no_stock']==1)}">
-		<div class="to-cart">ЗАКАЗАТЬ</div>
+		<div class="to-cart" ng-click="order(dinner)">ЗАКАЗАТЬ</div>
 		<div class="item" ng-click="select(dinner)">
 			<div class="top">
 				<div class="title">

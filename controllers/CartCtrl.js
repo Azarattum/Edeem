@@ -1,3 +1,3 @@
-app.controller("CartCtrl", ["$scope", function($scope) {
-	
+app.controller("CartCtrl", ["$scope", "Cart", function($scope, Cart) {
+	$scope.cart = Cart.get();
 }])

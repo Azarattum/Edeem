@@ -174,3 +174,26 @@
 	transform-origin: 0 100%;
     transform: rotateY(10deg);
 }
+
+.cart {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 64px;
+	width: 100vw;
+
+	background-color: hsla(32, 10%, 20%, 1);
+	color: #db9340;
+	font-family: Oswald;
+	line-height: 64px;
+	text-align: center;
+	font-size: 32px;
+
+	transition: 0.1s;
+	cursor: pointer;
+	z-index: 300;
+}
+
+.cart:hover {
+	height: 128px;
+}

@@ -3,7 +3,7 @@
 <div class="title">{{dinner["title"]}}</div>
 <div class="image"></div>
 <div class="button back" ng-click="goTo('menu')">В МЕНЮ</div>
-<div class="button buy">ЗАКАЗАТЬ</div>
+<div class="button buy" ng-click="order(dinner)">ЗАКАЗАТЬ</div>
 <div class="info">
 	<div class="category">{{+dinner["category_id"]|FoodCategory}} {{dinner["category_title"]}}</div>
 	<div class="time">⏱ {{dinner["cook_time"]}}</div>

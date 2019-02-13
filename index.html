@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="edeem">
 <head>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
 	<title>Edeem</title>
 	<link rel="shortcut icon" type="image/png" href="favicon.ico"/>
@@ -26,6 +27,11 @@
 	<div class="background">
 		<div class="over-shadow"><div class="shadow"></div></div>
 		<div class="over"></div>
+	</div>
+
+	<div class="cart" ng-click="goTo('cart')" ng-if="getCartItems()>0">
+		{{getCartItems()|DishCount}} : {{getCartPrice()}}₽<br>
+		<span style="color:white">В КАРЗИНУ</span>
 	</div>
 </body>
 </html>
