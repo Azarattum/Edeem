@@ -1,0 +1,12 @@
+<link rel="stylesheet" type="text/css" href="views/item.css">
+
+<div class="title">{{dinner["title"]}}</div>
+<div class="image"></div>
+<div class="button back" ng-click="goTo('menu')">В МЕНЮ</div>
+<div class="button buy">ЗАКАЗАТЬ</div>
+<div class="info">
+	<div class="category">{{+dinner["category_id"]|FoodCategory}} {{dinner["category_title"]}}</div>
+	<div class="time">⏱ {{dinner["cook_time"]}}</div>
+	<div class="price">💰 {{dinner["price"]}}₽</div>
+</div>
+<div class="description">{{dinner["description"]}}</div>

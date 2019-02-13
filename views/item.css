@@ -1,0 +1,148 @@
+@media screen and (min-width: 801px) {
+	.image {
+		left: 0px;
+		float: left;
+		width: 256px;
+		height: 256px;
+	}
+	.button {
+		width: calc((100% - 256px - 16px) / 2 - 16px);
+		font-size: 32px;
+	}
+	.description {
+		position: absolute;
+		width: calc(100% - 48px - 256px - 64px);
+		left: calc(256px + 40px);
+	}
+	.info>div {
+		float: left;
+	}
+}
+@media screen and (min-width: 0px) and (max-width: 800px) {
+	.title {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.image {
+		left: 50%;
+		transform: translateX(-50%);
+		width: calc(100vmin - 128px);
+		height: calc(100vmin - 128px);
+	}
+	.button {
+		width: calc(100% / 2 - 16px);
+		font-size: 28px;
+	}
+	.description {
+		position: relative;
+		width: calc(100% - 32px);
+		left: -8px;
+	}
+	.info>div {
+		float: left;
+		margin: 4px;
+	}
+}
+
+.title {
+	position: relative;
+	width: max-content;
+	text-align: center;
+	font-family: Oswald;
+	
+	padding: 8px;
+	background-color: white;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	box-shadow: 0px 6px 4px rgba(0,0,0,0.3);
+	
+	font-size: 32px;
+	text-transform: uppercase;
+	color: #160b08;
+}
+
+.image {
+	min-width: 256px;
+	min-height: 256px;
+	position: relative;
+	
+	margin-top: 16px;
+	margin-right: 16px;
+	border-radius: 8px;
+	box-shadow: 0px 6px 4px rgba(0,0,0,0.3);
+	
+	background-color: rgb(190,190,190);
+}
+
+.button {
+	height: 64px;
+	
+	margin: 8px;
+	margin-top: 16px;
+	
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	box-shadow: 0px 6px 4px rgba(0,0,0,0.3);
+	background-color: hsla(32, 10%, 20%, 1);
+	color: #db9340;
+	
+	font-family: Oswald;
+	line-height: 64px;
+	text-align: center;
+	
+	user-select: none;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.button:hover {
+	transform: translateY(-8px);
+}
+
+.button:active {
+	transform: translateY(-16px) scale(1.02);
+}
+
+.back {
+	float: left;
+}
+
+.buy {
+	float: left;
+}
+
+.info {
+	display: inline-block;
+	position: relative;
+	top: 12px;
+	
+	font-family: Didact;
+	color: #353535;
+}
+
+.info>div {
+	position: relative;
+	left: 8px;
+	margin-right: 1vw;
+	
+	background-color: white;
+	padding: 4px;
+	border-radius: 4px;
+	
+	box-shadow: 0px 3px 4px rgba(0,0,0,0.3);
+}
+
+.description {
+	
+	margin: 16px;
+	min-height: calc(256px - 136px);
+	
+	font-family: OpenSans;
+	font-size: 22px;
+	
+	padding: 8px;
+	background-color: white;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+	box-shadow: 0px 6px 4px rgba(0,0,0,0.3);
+}

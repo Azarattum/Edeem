@@ -1,0 +1,138 @@
+@font-face {
+  font-family: Dosis;
+  src: url("../assets/fonts/dosis.extrabold.ttf");
+}
+@font-face {
+  font-family: Didact;
+  src: url("../assets/fonts/didact.regular.ttf");
+}
+@font-face {
+  font-family: Oswald;
+  src: url("../assets/fonts/oswald.semibold.ttf");
+}
+@font-face {
+  font-family: OpenSans;
+  src: url("../assets/fonts/opensans.light.ttf");
+}
+
+body {
+	margin: 0px;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.logo {
+	position: fixed;
+	left: 50%;
+	top: 8%;
+	transform: translateX(-50%);
+	text-align: center;
+	
+	font-size: 14vmin;
+	font-family: Dosis;
+	color: white;
+	text-shadow: 0px 12px 8px rgba(0,0,0,0.5);
+	
+	cursor: default;
+	
+	transition: 0.2s;
+	z-index: 150;
+}
+
+.logo.minimized {
+	top: 0px;
+	width: 350px;
+	height: 0;
+	
+	font-size: 8vmin;
+	text-shadow: none;
+	
+	border-top: 11vmin solid hsla(32, 10%, 20%, 1);
+    border-left: 5.5vmin solid transparent;
+    border-right: 5.5vmin solid transparent;
+	
+	cursor: pointer;
+}
+
+.logo.minimized>.text {
+	position: relative;
+	top: -11vmin;
+}
+
+.wrapper {
+	position: absolute;
+	left: 50%;
+	top: 48vh;
+	transform: translateX(-50%);
+	
+	width: 100vmin;
+	min-height: calc(52vh - 64px);
+	min-width: min-content;
+	max-width: 80vw;
+	
+	box-shadow: 0px 0px 16px rgba(0,0,0,0.4);
+	border-top-right-radius: 32px;
+	border-top-left-radius: 32px;
+	
+	padding: 32px;
+	
+	z-index: 100;
+}
+
+.background {
+	position: fixed;
+	left: -10vw;
+	top: 0px;
+	
+	width: 120vw;
+	height: 110vh;
+	
+	background-image: url("../assets/images/background.jpg");
+	background-size: cover;
+	z-index: 0;
+}
+
+.background>.over {
+	position: absolute;
+	
+	left: -10vw;
+	top: 16%;
+	width: 120vw;
+	min-width: 420px;
+	height: 110vh;
+	
+	clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 40%);
+	background-image: url("../assets/images/background.blured.jpg");
+	background-position-y: -16vh;
+	
+	background-size: cover;
+}
+
+.background>.over-shadow {
+	position: absolute;
+	display: block;
+	
+	left: -10vw;
+	top: 16%;
+	width: 130vw;
+	height: 100vh;
+	
+	filter: blur(8px);
+
+	background-size: cover;
+}
+
+.background>.over-shadow>.shadow {
+	position: absolute;
+	display: block;
+	
+	left: -10vw;
+	top: 0%;
+	width: 130vw;
+	height: 100vh;
+	
+	clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 40%);
+	background-color: black;
+	opacity: 0.4;
+	
+	background-size: cover;
+}

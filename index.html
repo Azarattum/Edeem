@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="edeem">
+<head>
+	<meta name="viewport" content="width=device-width">
+	<title>Edeem</title>
+	<link rel="stylesheet" type="text/css" href="views/index.css">
+	<script type="text/javascript" src="libs/angular.js"></script>
+	<script type="text/javascript" src="libs/angular-mocks.js"></script>
+	<script type="text/javascript" src="libs/angular-ui-router.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="services/MenuSvc.js"></script>
+	<script type="text/javascript" src="services/DinnersSvc.js"></script>
+	<script type="text/javascript" src="controllers/IndexCtrl.js"></script>
+	<script type="text/javascript" src="controllers/MenuCtrl.js"></script>
+	<script type="text/javascript" src="controllers/ItemCtrl.js"></script>
+	<script type="text/javascript" src="controllers/CartCtrl.js"></script>
+</head>
+<body ng-controller="IndexCtrl">
+	<div class="logo" ng-click="scrollToTop(200)">
+		<div class="text">ED<span style="color:#db9340">EE</span>M</div>
+	</div>
+
+  	<div class="wrapper" ui-view="content"></div>
+	
+	<div class="background">
+		<div class="over-shadow"><div class="shadow"></div></div>
+		<div class="over"></div>
+	</div>
+</body>
+</html>
