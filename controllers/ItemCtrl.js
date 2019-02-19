@@ -3,19 +3,17 @@ app.controller("ItemCtrl", ["$scope", "$stateParams", "Menu", "Cart", function($
 	let id = $stateParams.id;
 	$scope.dinner = Menu.loadCache().find(x => x.id == id);
 	$scope.order = Cart.add;
-	console.log($scope.dinner);
 	
-	//Scroll content up
 	Menu.getAll(Math.ceil(id / 30)).then((res) => {
 		$scope.dinner = res.data.find(x => x.id == id);
 	}).catch((res) => {
 		console.log(res);
 	});
 	
-	$scope.scrollToTop();
-	document.body.onload = () => {
+	//Scroll page down on load
+	angular.element(window.document.body).ready(() => {
 		setTimeout(() => {
-		window.scrollBy(0, Number.MAX_SAFE_INTEGER);
-		}, 5);
-	};
+			window.scrollBy(0, Number.MAX_SAFE_INTEGER);
+		}, 100);
+	});
 }])

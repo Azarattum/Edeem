@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="views/item.css">
+<link rel="stylesheet" type="text/css" href="views/item.css" id="styles">
 
 <div class="title">{{dinner["title"]}}</div>
 <div class="image"></div>
@@ -9,4 +9,4 @@
 	<div class="time">⏱ {{dinner["cook_time"]}}</div>
 	<div class="price">💰 {{dinner["price"]}}₽</div>
 </div>
-<div class="description">{{dinner["description"]}}</div>
+<div class="description" ng-init="alert()">{{dinner["description"]}}</div>
