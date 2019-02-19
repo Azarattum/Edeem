@@ -1,21 +1,31 @@
 <link rel="stylesheet" type="text/css" href="views/menu.css">
 
-<div class="items">
-	<div class="item-wrapper" ng-repeat="dinner in dinners"
-		ng-class="{notavailable:(+dinner['is_no_stock']==1)}">
-		<div class="to-cart" ng-click="order(dinner)">ЗАКАЗАТЬ</div>
-		<div class="item" ng-click="select(dinner)">
-			<div class="top">
-				<div class="title">
-					{{dinner["title"]}}
+<div class="wrapper">
+	<div class="items">
+		<div class="item-wrapper" ng-repeat="dinner in dinners"
+			ng-class="{notavailable:(+dinner['is_no_stock']==1)}"
+			ng-if="inFilters(dinner)">
+			<div class="to-cart" ng-click="order(dinner)">ЗАКАЗАТЬ</div>
+			<div class="item" ng-click="select(dinner)">
+				<div class="top">
+					<div class="title">
+						{{dinner["title"]}}
+					</div>
+				</div>
+				<div class="image"></div>
+				<div class="info">
+					<div class="category">{{+dinner["category_id"]|FoodCategory}} {{dinner["category_title"]}}</div>
+					<div class="time">⏱ {{dinner["cook_time"]}}</div>
+					<div class="price">💰 {{dinner["price"]}}₽</div>
 				</div>
 			</div>
-			<div class="image"></div>
-			<div class="info">
-				<div class="category">{{+dinner["category_id"]|FoodCategory}} {{dinner["category_title"]}}</div>
-				<div class="time">⏱ {{dinner["cook_time"]}}</div>
-				<div class="price">💰 {{dinner["price"]}}₽</div>
-			</div>
 		</div>
+	</div>
+</div>
+<div class="filters">
+	<div class="filter" ng-repeat="filter in filters" ng-click="filter.active = !filter.active">
+		<span ng-if="filter.active" style="color:green">✔️</span>
+		<span ng-if="!filter.active" style="color:green">{{+filter.id|FoodCategory}}</span>
+		{{filter.title}}
 	</div>
 </div>
