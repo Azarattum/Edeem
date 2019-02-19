@@ -12,6 +12,12 @@
 	.cart:hover {
 		height: 128px;
 	}
+	.item-wrapper:not(.notavailable):hover {
+		transform: translateY(-8px);
+	}
+	.item-wrapper:not(.notavailable):active {
+		transform: translateY(-16px) scale(1.02);
+	}
 }
 @media only screen and (min-width: 750px) and (max-width: 1280px) {
 	.items {
@@ -26,6 +32,12 @@
 	}
 	.cart:hover {
 		height: 128px;
+	}
+	.item-wrapper:not(.notavailable):hover {
+		transform: translateY(-8px);
+	}
+	.item-wrapper:not(.notavailable):active {
+		transform: translateY(-16px) scale(1.02);
 	}
 }
 @media only screen and (min-width: 0px) and (max-width: 750px) {
@@ -114,16 +126,8 @@
 	filter: saturate(0);
 }
 
-.item-wrapper:not(.notavailable):hover {
-	transform: translateY(-8px);
-}
-
 .item-wrapper:not(.notavailable):hover > .item {
 	background-color: lightgray;
-}
-
-.item-wrapper:not(.notavailable):active {
-	transform: translateY(-16px) scale(1.02);
 }
 
 .item>.top {
