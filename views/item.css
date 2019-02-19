@@ -36,6 +36,7 @@
 	.button {
 		width: calc(100% / 2 - 16px);
 		font-size: 28px;
+		border-radius: 8px;
 	}
 	.description {
 		position: relative;
