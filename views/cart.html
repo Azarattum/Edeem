@@ -1,10 +1,33 @@
 <link rel="stylesheet" type="text/css" href="views/cart.css">
 
 <div class="wrapper">
-    <div class="button back" ng-click="goTo('menu')">В МЕНЮ</div>
-    <div>Your cart.</div>
-    <br>
-    <div ng-repeat="item in cart">
-        {{item.title}} x{{item.count}}<br>
+    <div class="navigation">
+        <div class="button back" 
+            ng-click="goTo('menu')" ng-model="hoverBack"
+            ng-mouseover="hoverBack=true" ng-mouseleave="hoverBack=false">
+            {{hoverBack?"В МЕНЮ":"◄"}}
+        </div>
+        <div class="button forward" 
+            ng-click="" ng-model="hoverForward"
+            ng-mouseover="hoverForward=true" ng-mouseleave="hoverForward=false">
+            {{hoverForward?"К ОПЛАТЕ":"►"}}
+        </div>
     </div>
+    <div ng-repeat="item in cart" class="item">
+        <div class="card">
+            <div class="image"></div>
+            <div class="title">{{item.title}}</div>
+            <div class="info">
+                <div class="price">{{item.count * item.price}}₽</div>
+                <div class="splitter"></div>
+                <div class="count">{{item.count}}</div>
+                <div class="splitter"></div>
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="button add" ng-click="add(item)">+</div>
+            <div class="button remove" ng-click="remove(item.id)">-</div>
+        </div>
+    </div>
+    <div class="total" ng-if="getCartPrice() > 0">ИТОГО: {{getCartPrice()}}₽</div>
 </div>
