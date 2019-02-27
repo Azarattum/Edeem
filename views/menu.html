@@ -2,22 +2,24 @@
 
 <div class="wrapper">
 	<div class="items">
-		<div class="item-wrapper" ng-repeat="dinner in dinners"
-			ng-class="{notavailable:(+dinner['is_no_stock']==1)}"
-			ng-if="inFilters(dinner)">
-			<div class="to-cart" ng-click="order(dinner)">ЗАКАЗАТЬ</div>
-			<div class="item" ng-click="select(dinner)">
+		<div class="item-wrapper" ng-repeat="item in items"
+			ng-class="{notavailable:(+item['is_no_stock']==1)}"
+			ng-if="inFilters(item)">
+			<div class="to-cart" ng-click="order(item)">ЗАКАЗАТЬ</div>
+			<div class="item" ng-click="select(item)">
 				<div class="top">
 					<div class="title">
-						{{dinner["title"]}}
+						{{item["title"]}}
 					</div>
 				</div>
 				<div class="image"></div>
 				<div class="info">
-					<div class="category"><span class="ico">{{+dinner["category_id"]|FoodCategory}}</span> {{dinner["category_title"]}}</div>
-					<div class="time"><span class="ico">⏱</span> {{dinner["cook_time"]}}</div>
-					<div class="price"><span class="ico">💰</span> {{dinner["price"]}}₽</div>
+					<div class="category"><span class="ico">{{+item["category_id"]|FoodCategory}}</span> {{item["category_title"]}}</div>
+					<div class="time"><span class="ico">⏱</span> {{item["cook_time"]}}</div>
+					<div class="price"><span class="ico">💰</span> {{item["price"]}}₽</div>
 				</div>
+				<div class="carted" ng-show="inCart(item.id)>0"><span class="ico">🛒</span>
+					<span ng-show="inCart(item.id)>1">{{inCart(item.id)}}</span></div>
 			</div>
 		</div>
 	</div>

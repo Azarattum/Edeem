@@ -158,3 +158,11 @@ body {
 .ico {
 	font-family: SegoeUIEmoji;
 }
+
+.image {
+	background-image: url("../assets/images/food.svg");
+	background-size: 90%;
+    background-repeat: no-repeat;
+	background-position-y: 100%;
+	fill: yellow;
+}

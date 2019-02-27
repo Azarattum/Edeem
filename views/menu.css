@@ -139,7 +139,7 @@
 }
 
 .item>.top>.title {
-	position:absolute;
+	position: absolute;
 	width: 100%;
 	text-align: center;
 	font-family: Oswald;
@@ -269,4 +269,16 @@
 
 .filter:hover {
 	background-color: lightgray;
+}
+
+.carted {
+	position: absolute;
+	top: 0;
+	right: 8px;
+
+	font-size: 22px;
+	font-family: Didact;
+
+	filter: saturate(0);
+	opacity: 0.6;
 }

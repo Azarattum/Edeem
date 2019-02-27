@@ -38,9 +38,12 @@ app.factory("Cart", [() => {
 		});
 	};
 
-	let get = () => {
+	let get = (id) => {
 		//Returns the cart
-		return cart;
+		if (id == undefined)
+			return cart;
+		else
+			return cart.find(x => x.id == id);
 	};
 
 	return {
