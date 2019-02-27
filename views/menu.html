@@ -21,11 +21,12 @@
 			</div>
 		</div>
 	</div>
+	<div ng-style="{'height': getCartItems()>0?'64px':'0px'}"></div>
 </div>
 <div class="filters">
 	<div class="filter" ng-repeat="filter in filters" ng-click="filter.active = !filter.active">
-		<span ng-if="filter.active" class="ico">✔️</span>
-		<span ng-if="!filter.active" class="ico">{{+filter.id|FoodCategory}}</span>
+		<span ng-show="filter.active" class="ico">✔️</span>
+		<span ng-show="!filter.active" class="ico">{{+filter.id|FoodCategory}}</span>
 		{{filter.title}}
 	</div>
 </div>

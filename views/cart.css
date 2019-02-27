@@ -1,10 +1,10 @@
 @media only screen and (min-width: 750px) {
 	.navigation .button:hover {
-		transform: scale(0.98)/*translateY(-8px)*/;
+		transform: scale(0.98);
 		box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
 	}
 	.navigation .button:active {
-		transform: /*translateY(-16px) */scale(0.96);
+		transform: scale(0.96);
 		box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3);
 	}
 }
@@ -14,6 +14,7 @@
 	}
 	.item>.card {
 		display: block !important;
+		width: calc(100% - 72px - 32px) !important;
 	}
 	.item>.card>.title {
 		width: calc(100% - 64px) !important;
@@ -27,8 +28,15 @@
 		border-bottom-left-radius: 0px !important;
 		border-bottom-right-radius: 8px;
 	}
+	.item>.buttons {
+		width: 72px !important;
+	}
 	.item>.buttons>.button {
 		font-size: 50px !important;
+		width: 100% !important;
+	}
+	.item>.buttons>.button.delete {
+		display: none;
 	}
 }
 @media only screen and (min-width: 0px) and (max-width: 610px) {
@@ -70,7 +78,7 @@
 	background-color: white;
 	
     font-family: Oswald;
-    font-size: 48px;
+    font-size: 42px;
 	line-height: 42px;
 	text-align: center;
 	
@@ -107,12 +115,20 @@
 	margin: 8px;
 }
 
+.item.ng-leave {
+	transition: 0.4s;
+}
+	 
+.item.ng-leave-active {
+	transform: translateX(-200%)
+}
+
 .item>.card {
 	display: flex; 
 	justify-content: space-between;
 	
 	float: left;
-	width: calc(100% - 72px - 32px);
+	width: calc(100% - 144px - 32px);
 	height: 100%;
 	
 	border-top-left-radius: 8px;
@@ -206,7 +222,7 @@
 	float: right;
 	overflow: hidden;
 
-	width: 72px;
+	width: 144px;
 	height: 100%;
 
 	margin-left: 16px;
@@ -219,7 +235,8 @@
 }
 
 .item>.buttons>.button {
-	width: 100%;
+	float: left;
+	width: calc(50% - 1px);
 	height: 50%;
 
 	font-family: Oswald;
@@ -230,6 +247,12 @@
 	user-select: none;
 	cursor: pointer;
 	transition: 0.1s;
+}
+
+.button.delete {
+	border-right: solid 1px hsla(32, 10%, 20%, 0.4);
+	height: 100% !important;
+    line-height: 64px !important;
 }
 
 .button.add {

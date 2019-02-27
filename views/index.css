@@ -21,6 +21,7 @@
 
 @media only screen and (min-width: 0px) and (max-width: 420px) {
 	.wrapper {
+				width: calc(100vw - 24px) !important;
 				max-width: calc(100vw - 24px) !important;
 				min-height: 52vh !important;
         padding: 0px !important;
@@ -30,6 +31,9 @@
 body {
 	margin: 0px;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	background-image: url("../assets/images/background.blured.jpg");
+	background-size: 170vmax;
+	background-attachment: fixed;
 }
 
 .logo {

@@ -1,4 +1,4 @@
-var app = angular.module("edeem", ["ui.router"/*,"ngMockE2E"*/]);
+var app = angular.module("edeem", ["ui.router", "swipe", "ngAnimate"]);
 document.addEventListener("touchstart", function(){}, true);
 
 app.config(["$sceDelegateProvider", ($sceDelegateProvider) => {

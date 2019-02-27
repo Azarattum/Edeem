@@ -21,12 +21,15 @@ app.factory("Cart", [() => {
 			cart.find(x => x.id == item.id).count += count;
 	};
 
-	let remove = (id, count = 1) => {
+	let remove = (id, count = -1) => {
 		cart = cart.filter(x => {
 			//Find item by id
 			if (x.id == id)
 			{
 				//Decrease count of the item
+				if (count == -1)
+					return false;
+					
 				x.count -= count;
 				if (x.count <= 0)
 					return false;

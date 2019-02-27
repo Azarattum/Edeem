@@ -13,7 +13,7 @@
         <div class="button forward" ng-click="submit()">ОПЛАТА ►</div>
     </div>
     <div ng-repeat="item in cart" class="item">
-        <div class="card">
+        <div class="card" ng-swipe-left="delete(item.id)" ng-swipe-disable-mouse>
             <div class="image"></div>
             <div class="title">{{item.title}}</div>
             <div class="info">
@@ -24,8 +24,9 @@
             </div>
         </div>
         <div class="buttons">
+            <div class="button delete" ng-click="delete(item.id)">🗑</div>
             <div class="button add" ng-click="add(item)">+</div>
-            <div class="button remove" ng-click="remove(item.id)">-</div>
+            <div class="button remove" ng-click="remove(item.id, 1)">-</div>
         </div>
     </div>
     <div class="total" ng-if="getCartPrice() > 0">ИТОГО: {{getCartPrice()}}₽</div>
