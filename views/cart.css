@@ -126,6 +126,7 @@
 .item>.card {
 	display: flex; 
 	justify-content: space-between;
+	transform: translateX(0);
 	
 	float: left;
 	width: calc(100% - 144px - 32px);
@@ -187,7 +188,8 @@
 	padding-left: 16px;
 	padding-right: 16px;
 	width: max-content;
-	min-width: 48px;
+	min-width: 108px;
+	text-transform: none !important;
 
 	text-align: center;
 	text-transform: uppercase;
@@ -275,4 +277,42 @@
 
 	background-color: white;
 	box-shadow: 0px 6px 4px rgba(0,0,0,0.3);
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: max-content;
+	height: 32px;
+	line-height: 32px;
+	background-color: hsla(32, 10%, 20%, 1);
+	color: #fff;
+	padding: 8px;
+	border-radius: 6px;
+
+	text-indent: 0;
+	position: absolute;
+	z-index: 1;
+	bottom: 100%;
+	left: 33%;
+	transform: translateX(-50%);
+
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: hsla(32, 10%, 20%, 1) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+	pointer-events: none;
+	opacity: 0.8;
 }

@@ -15,11 +15,11 @@
     <div ng-repeat="item in cart" class="item">
         <div class="card" ng-swipe-left="delete(item.id)" ng-swipe-disable-mouse>
             <div class="image"></div>
-            <div class="title">{{item.title}}</div>
+            <div class="title tooltip">{{item.title}}<span class="tooltiptext">{{item.title}}</span></div>
             <div class="info">
                 <div class="price">{{item.count * item.price}}₽</div>
                 <div class="splitter"></div>
-                <div class="count">{{item.count}}</div>
+                <div class="count">{{item.price}}₽ x{{item.count}}</div>
                 <div class="splitter"></div>
             </div>
         </div>
