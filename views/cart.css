@@ -1,8 +1,8 @@
 @media only screen and (min-width: 750px) {
-	.navigation>.button:hover {
+	.navigation .button:hover {
 		transform: translateY(-8px);
 	}
-	.navigation>.button:active {
+	.navigation .button:active {
 		transform: translateY(-16px) scale(1.02);
 	}
 }
@@ -33,7 +33,7 @@
 	.item>.card>.title {
 		font-size: 18px !important;
 	}
-	.navigation>.button {
+	.navigation .button {
 		font-size: 28px !important;
 		line-height: 48px !important;
 		margin-left: 8px !important;
@@ -57,7 +57,7 @@
 	width: 100%;
 }
 
-.navigation>.button {
+.navigation .button {
 	height: 48px;
 	width: 100%;
 	margin: 16px;

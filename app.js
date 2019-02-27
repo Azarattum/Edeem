@@ -34,5 +34,14 @@ app.config(["$stateProvider", "$urlRouterProvider", ($stateProvider, $urlRouterP
 				controller: "CartCtrl"
 			}
 		}
+	})
+	.state("pay", {
+		url: "/pay",
+		views: {
+			"content" : {
+				templateUrl: "views/pay.html",
+				controller: "PayCtrl"
+			}
+		}
 	});
 }]);

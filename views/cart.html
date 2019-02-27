@@ -1,16 +1,22 @@
 <link rel="stylesheet" type="text/css" href="views/cart.css">
 
 <div class="wrapper">
-    <div class="navigation">
+    <form method="POST" action="http://demo.paykeeper.ru/create/" style="display:none">
+        <input type="hidden" name="sum" value="{{getCartPrice()}}"/>
+        <input type="hidden" name="orderid" value="1"/>
+        <input type="hidden" name="service_name" value="Edeem payment"/>
+        <input style="display:none" id="submit" ng-model="hoverForward" ng-mouseover="hoverForward=true" ng-mouseleave="hoverForward=false" type="submit" value="{{hoverForward?'К ОПЛАТЕ':'►'}}" />
+    </form>
+    <div class="navigation" ng-model="hover">
         <div class="button back" 
-            ng-click="goTo('menu')" ng-model="hoverBack"
-            ng-mouseover="hoverBack=true" ng-mouseleave="hoverBack=false">
-            {{hoverBack?"В МЕНЮ":"◄"}}
+            ng-click="goTo('menu')"
+            ng-mouseover="hover.back=true" ng-mouseleave="hover.back=false">
+            {{hover.back?"В МЕНЮ":"◄"}}
         </div>
         <div class="button forward" 
-            ng-click="" ng-model="hoverForward"
-            ng-mouseover="hoverForward=true" ng-mouseleave="hoverForward=false">
-            {{hoverForward?"К ОПЛАТЕ":"►"}}
+            ng-click="submit()"
+            ng-mouseover="hover.forward=true" ng-mouseleave="hover.forward=false">
+            {{hover.forward?"К ОПЛАТЕ":"►"}}
         </div>
     </div>
     <div ng-repeat="item in cart" class="item">
