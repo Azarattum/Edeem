@@ -1,9 +1,11 @@
 @media only screen and (min-width: 750px) {
 	.navigation .button:hover {
-		transform: translateY(-8px);
+		transform: scale(0.98)/*translateY(-8px)*/;
+		box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
 	}
 	.navigation .button:active {
-		transform: translateY(-16px) scale(1.02);
+		transform: /*translateY(-16px) */scale(0.96);
+		box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3);
 	}
 }
 @media only screen and (min-width: 0px) and (max-width: 750px) {
@@ -34,7 +36,7 @@
 		font-size: 18px !important;
 	}
 	.navigation .button {
-		font-size: 28px !important;
+		font-size: 24px !important;
 		line-height: 48px !important;
 		margin-left: 8px !important;
 		margin-right: 8px !important;

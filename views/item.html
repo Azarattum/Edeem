@@ -3,12 +3,12 @@
 <div class="wrapper">
 	<div class="title">{{dinner["title"]}}</div>
 	<div class="image"></div>
-	<div class="button back" ng-click="goTo('menu')">В МЕНЮ</div>
-	<div class="button buy" ng-click="order(dinner)">ЗАКАЗАТЬ</div>
+	<div class="button back" ng-click="goTo('menu')">◄ МЕНЮ</div>
+	<div class="button buy" ng-click="order(dinner)">ЗАКАЗАТЬ ▲</div>
 	<div class="info">
-		<div class="category">{{+dinner["category_id"]|FoodCategory}} {{dinner["category_title"]}}</div>
-		<div class="time">⏱ {{dinner["cook_time"]}}</div>
-		<div class="price">💰 {{dinner["price"]}}₽</div>
+		<div class="category"><span class="ico">{{+dinner["category_id"]|FoodCategory}}</span> {{dinner["category_title"]}}</div>
+		<div class="time"><span class="ico">⏱</span> {{dinner["cook_time"]}}</div>
+		<div class="price"><span class="ico">💰</span> {{dinner["price"]}}₽</div>
 	</div>
 	<div class="description" ng-init="alert()">{{dinner["description"]}}</div>
 </div>

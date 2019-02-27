@@ -9,15 +9,8 @@
     </form>
     <div class="navigation" ng-model="hover">
         <div class="button back" 
-            ng-click="goTo('menu')"
-            ng-mouseover="hover.back=true" ng-mouseleave="hover.back=false">
-            {{hover.back?"В МЕНЮ":"◄"}}
-        </div>
-        <div class="button forward" 
-            ng-click="submit()"
-            ng-mouseover="hover.forward=true" ng-mouseleave="hover.forward=false">
-            {{hover.forward?"К ОПЛАТЕ":"►"}}
-        </div>
+            ng-click="goTo('menu')">◄ МЕНЮ</div>
+        <div class="button forward" ng-click="submit()">ОПЛАТА ►</div>
     </div>
     <div ng-repeat="item in cart" class="item">
         <div class="card">

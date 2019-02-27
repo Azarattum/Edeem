@@ -14,9 +14,9 @@
 				</div>
 				<div class="image"></div>
 				<div class="info">
-					<div class="category">{{+dinner["category_id"]|FoodCategory}} {{dinner["category_title"]}}</div>
-					<div class="time">⏱ {{dinner["cook_time"]}}</div>
-					<div class="price">💰 {{dinner["price"]}}₽</div>
+					<div class="category"><span class="ico">{{+dinner["category_id"]|FoodCategory}}</span> {{dinner["category_title"]}}</div>
+					<div class="time"><span class="ico">⏱</span> {{dinner["cook_time"]}}</div>
+					<div class="price"><span class="ico">💰</span> {{dinner["price"]}}₽</div>
 				</div>
 			</div>
 		</div>
@@ -24,8 +24,8 @@
 </div>
 <div class="filters">
 	<div class="filter" ng-repeat="filter in filters" ng-click="filter.active = !filter.active">
-		<span ng-if="filter.active" style="color:green">✔️</span>
-		<span ng-if="!filter.active" style="color:green">{{+filter.id|FoodCategory}}</span>
+		<span ng-if="filter.active" class="ico">✔️</span>
+		<span ng-if="!filter.active" class="ico">{{+filter.id|FoodCategory}}</span>
 		{{filter.title}}
 	</div>
 </div>

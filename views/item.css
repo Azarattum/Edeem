@@ -7,7 +7,7 @@
 	}
 	.button {
 		width: calc((100% - 256px - 16px) / 2 - 16px);
-		font-size: 32px;
+		font-size: 28px;
 	}
 	.description {
 		position: absolute;
@@ -35,7 +35,7 @@
 	}
 	.button {
 		width: calc(100% / 2 - 16px);
-		font-size: 28px;
+		font-size: 22px;
 		border-radius: 8px;
 	}
 	.description {
@@ -102,11 +102,13 @@
 }
 
 .button:hover {
-	transform: translateY(-8px);
+	transform: scale(0.98)/*translateY(-8px)*/;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
 }
 
 .button:active {
-	transform: translateY(-16px) scale(1.02);
+	transform: /*translateY(-16px) */scale(0.96);
+	box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3);
 }
 
 .back {
@@ -115,6 +117,8 @@
 
 .buy {
 	float: left;
+	background-color: #db9340 !important;
+	color: hsla(32, 10%, 20%, 1) !important;
 }
 
 .info {
