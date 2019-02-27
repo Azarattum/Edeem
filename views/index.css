@@ -1,22 +1,22 @@
 @font-face {
-  font-family: Dosis;
-  src: url("../assets/fonts/dosis.extrabold.ttf");
+	font-family: Dosis;
+	src: url("../assets/fonts/dosis.extrabold.ttf");
 }
 @font-face {
-  font-family: Didact;
-  src: url("../assets/fonts/didact.regular.ttf");
+	font-family: Didact;
+	src: url("../assets/fonts/didact.regular.ttf");
 }
 @font-face {
-  font-family: Oswald;
-  src: url("../assets/fonts/oswald.semibold.ttf");
+	font-family: Oswald;
+	src: url("../assets/fonts/oswald.semibold.ttf");
 }
 @font-face {
-  font-family: OpenSans;
-  src: url("../assets/fonts/opensans.light.ttf");
+	font-family: OpenSans;
+	src: url("../assets/fonts/opensans.light.ttf");
 }
 @font-face {
-  font-family: SegoeUIEmoji;
-  src: url("../assets/fonts/seguiemj.ttf");
+	font-family: SegoeUIEmoji;
+	src: url("../assets/fonts/seguiemj.ttf");
 }
 
 @media only screen and (min-width: 0px) and (max-width: 420px) {
@@ -165,4 +165,20 @@ body {
     background-repeat: no-repeat;
 	background-position-y: 100%;
 	fill: yellow;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+	border-bottom-left-radius: 4px;
+	border-top-left-radius: 4px;
+	background-color: #db9340;
+	background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+}
+
+::-webkit-scrollbar-track {
+	background-color: #F5F5F5;
 }
